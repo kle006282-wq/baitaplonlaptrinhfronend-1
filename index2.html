@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lý Toàn Diện</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <h2>
+        <i class="fa-solid fa-shield-halved"></i>
+        ADMIN
+    </h2>
+
+    <div class="nav-link active"
+    onclick="showSection('schedule-sec', this)">
+
+        <i class="fa-solid fa-calendar"></i>
+        Lịch Học
+
+    </div>
+
+    <div class="nav-link"
+    onclick="showSection('user-sec', this)">
+
+        <i class="fa-solid fa-users"></i>
+        Người Dùng
+
+    </div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <!-- SCHEDULE -->
+
+    <div id="schedule-sec"
+    class="section active">
+
+        <h1>Quản Lý Lịch Học</h1>
+
+        <div class="glass-card">
+
+            <input type="text"
+            id="sch-user"
+            placeholder="Tên User...">
+
+            <input type="text"
+            id="sch-subject"
+            placeholder="Môn học...">
+
+            <input type="text"
+            id="sch-time"
+            placeholder="Thời gian...">
+
+            <button class="btn btn-add"
+            onclick="addSchedule()">
+
+                Thêm Lịch
+
+            </button>
+
+        </div>
+
+        <div id="scheduleGrid"
+        class="grid"></div>
+
+    </div>
+
+    <!-- USERS -->
+
+    <div id="user-sec"
+    class="section">
+
+        <h1>Quản Lý Người Dùng</h1>
+
+        <div class="glass-card">
+
+            <input type="text"
+            id="u-name"
+            placeholder="Họ và tên...">
+
+            <input type="text"
+            id="u-role"
+            placeholder="Chức vụ...">
+
+            <button class="btn btn-add"
+            style="background:var(--secondary)"
+            onclick="addUser()">
+
+                Thêm Thành Viên
+
+            </button>
+
+        </div>
+
+        <div id="userGrid"
+        class="grid"></div>
+
+    </div>
+
+</div>
+
+<!-- LINK JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

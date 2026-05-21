@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập hệ thống</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Orange_sun_icon.svg/512px-Orange_sun_icon.svg.png">
+        </div>
+
+        <h1>Đăng nhập tài khoản</h1>
+
+        <!-- ROLE -->
+        <div class="form-group">
+
+            <div class="icon-box orange">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <select id="role">
+                <option>Sinh Viên</option>
+                <option>Giảng Viên</option>
+                <option>Quản Trị</option>
+            </select>
+
+        </div>
+
+        <!-- USERNAME -->
+        <div class="form-group">
+
+            <div class="icon-box blue">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <input type="text"
+            id="username"
+            placeholder="Nhập tài khoản">
+
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+
+            <div class="icon-box gray">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <input type="password"
+            id="password"
+            placeholder="Nhập mật khẩu">
+
+            <div class="eye"
+            onclick="togglePassword()">
+
+                <i class="fa-solid fa-eye"></i>
+
+            </div>
+
+        </div>
+
+        <!-- FORGOT -->
+        <a href="#"
+        class="forgot"
+        onclick="forgotPassword()">
+
+            [ Quên mật khẩu ]
+
+        </a>
+
+        <!-- BUTTON -->
+        <div class="btn-group">
+
+            <!-- NÚT ĐĂNG NHẬP -->
+            <button class="btn btn-login"
+            onclick="login()">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Đăng nhập
+
+            </button>
+
+            <!-- NÚT TRANG CHỦ -->
+            <button class="btn btn-home"
+            onclick="goHome()">
+
+                <i class="fa-solid fa-house"></i>
+
+                Trang chủ
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- LINK FILE JAVASCRIPT -->
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Pro Dashboard</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>ClassScheduler</h2>
+    </div>
+
+    <ul class="menu">
+
+        <li>
+            <a class="nav-link active" data-target="dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="nav-link" data-target="courses">
+                <i class="fa-solid fa-book"></i>
+                <span>Khóa học</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="nav-link" data-target="students">
+                <i class="fa-solid fa-users"></i>
+                <span>Sinh viên</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="nav-link" data-target="notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span>Thông báo</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="nav-link" data-target="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Cài đặt</span>
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <div class="topbar">
+        <h1>ADMIN PRO</h1>
+
+        <div class="admin">
+            Xin chào, <b>Administrator</b>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div id="dashboard" class="section active">
+
+        <div class="cards">
+
+            <div class="card">
+                <i class="fa-solid fa-users blue"></i>
+                <h3>Tổng sinh viên</h3>
+                <h2>1200</h2>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-book green"></i>
+                <h3>Môn học</h3>
+                <h2>35</h2>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-calendar orange"></i>
+                <h3>Lịch học</h3>
+                <h2>140</h2>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-bell red"></i>
+                <h3>Thông báo</h3>
+                <h2>8</h2>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COURSES -->
+
+    <div id="courses" class="section">
+
+        <div class="content-box">
+
+            <h2>Quản lý khóa học</h2>
+
+            <button class="btn add">
+                <i class="fa-solid fa-plus"></i>
+                Thêm môn học
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- STUDENTS -->
+
+    <div id="students" class="section">
+
+        <div class="content-box">
+
+            <h2>Danh sách sinh viên</h2>
+
+        </div>
+
+    </div>
+
+    <!-- NOTIFICATIONS -->
+
+    <div id="notifications" class="section">
+
+        <div class="content-box">
+
+            <h2>Thông báo hệ thống</h2>
+
+        </div>
+
+    </div>
+
+    <!-- SETTINGS -->
+
+    <div id="settings" class="section">
+
+        <div class="content-box">
+
+            <h2>Cài đặt hệ thống</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LINK FILE JS -->
+<script src="js/admin.js"></script>
+
+</body>
+</html>
