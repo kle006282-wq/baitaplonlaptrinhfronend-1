@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng nhập hệ thống</title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="/style.css">
+  <!-- <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#d9d8e1;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+      padding-top:30px;
+    }
+
+    .login-container{
+      width:760px;
+      background:#fff;
+      border-radius:12px;
+      padding:40px 0 70px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .logo img{
+      width:120px;
+      margin-bottom:15px;
+    }
+
+    h1{
+      font-size:52px;
+      font-weight:400;
+      margin-bottom:40px;
+      color:#222;
+    }
+
+    .form-group{
+      width:500px;
+      margin:15px auto;
+      display:flex;
+      align-items:center;
+      border:1px solid #ccc;
+      border-radius:6px;
+      overflow:hidden;
+      background:#fff;
+    }
+
+    .icon-box{
+      width:60px;
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-right:1px solid #ccc;
+      font-size:22px;
+      background:#fff;
+    }
+
+    .orange{
+      color:#f39c12;
+    }
+
+    .blue{
+      color:#1e73be;
+    }
+
+    .gray{
+      color:#777;
+    }
+
+    select,
+    input{
+      flex:1;
+      height:52px;
+      border:none;
+      outline:none;
+      padding:0 18px;
+      font-size:18px;
+      background:#eef2ff;
+    }
+
+    select{
+      background:#fff;
+      font-weight:bold;
+      color:#333;
+    }
+
+    .eye{
+      width:60px;
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-left:1px solid #ccc;
+      cursor:pointer;
+      background:#fff;
+      color:#666;
+    }
+
+    .forgot{
+      display:block;
+      margin:20px 0;
+      color:#1e73be;
+      text-decoration:none;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    .forgot:hover{
+      text-decoration:underline;
+    }
+
+    .btn-group{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+    }
+
+    .btn{
+      border:none;
+      padding:15px 30px;
+      font-size:18px;
+      border-radius:8px;
+      color:white;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      opacity:0.9;
+    }
+
+    .btn-login{
+      background:#63c2de;
+    }
+
+    .btn-home{
+      background:#e67c73;
+    }
+
+    .btn i{
+      margin-right:8px;
+    }
+
+    @media(max-width:768px){
+
+      .login-container{
+        width:95%;
+      }
+
+      .form-group{
+        width:92%;
+      }
+
+      h1{
+        font-size:40px;
+      }
+
+      .btn-group{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+      }
+    }
+
+  </style> -->
+</head>
+
+<body>
+
+  <div class="login-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Orange_sun_icon.svg/512px-Orange_sun_icon.svg.png">
+    </div>
+
+    <h1>Đăng nhập tài khoản</h1>
+
+    <!-- ROLE -->
+    <div class="form-group">
+
+      <div class="icon-box orange">
+        <i class="fa-solid fa-building"></i>
+      </div>
+
+      <select id="role">
+        <option>Sinh Viên</option>
+        <option>Giảng Viên</option>
+        <option>Quản Trị</option>
+      </select>
+
+    </div>
+
+    <!-- USERNAME -->
+    <div class="form-group">
+
+      <div class="icon-box blue">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <input type="text"
+      id="username"
+      placeholder="Nhập tài khoản">
+
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="form-group">
+
+      <div class="icon-box gray">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <input type="password"
+      id="password"
+      placeholder="Nhập mật khẩu">
+
+      <div class="eye"
+      onclick="togglePassword()">
+
+        <i class="fa-solid fa-eye"></i>
+
+      </div>
+
+    </div>
+
+    <!-- FORGOT -->
+    <a href="#"
+    class="forgot"
+    onclick="forgotPassword()">
+
+      [ Quên mật khẩu ]
+
+    </a>
+
+    <!-- BUTTON -->
+    <div class="btn-group">
+       <a href="/ajaxStudy.html"></a>
+      <button class="btn btn-login"
+      onclick="login()">
+
+        <i class="fa-solid fa-right-to-bracket ; " ></i>
+
+        Đăng nhập
+
+      </button>
+
+      <button class="btn btn-home"
+      onclick="goHome()">
+
+        <i class="fa-solid fa-house"></i>
+        Trang chủ
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    // ==========================
+    // HIỆN / ẨN PASSWORD
+    // ==========================
+    function togglePassword(){
+
+      const password =
+      document.getElementById("password");
+
+      const eye =
+      document.querySelector(".eye i");
+
+      if(password.type === "password"){
+
+        password.type = "text";
+
+        eye.classList.remove("fa-eye");
+        eye.classList.add("fa-eye-slash");
+
+      }else{
+
+        password.type = "password";
+
+        eye.classList.remove("fa-eye-slash");
+        eye.classList.add("fa-eye");
+      }
+    }
+
+    // ==========================
+    // ĐĂNG NHẬP
+    // ==========================
+    function login(){
+
+      const username =
+      document.getElementById("username")
+      .value.trim();
+
+      const password =
+      document.getElementById("password")
+      .value.trim();
+
+      const role =
+      document.getElementById("role")
+      .value;
+
+      // KIỂM TRA RỖNG
+      if(username === "" || password === ""){
+
+        alert("Vui lòng nhập đầy đủ thông tin!");
+        return;
+      }
+
+      // TÀI KHOẢN MẪU
+      // admin / 123456
+      // student / 123456
+
+      if(username === "admin"
+      && password === "123456"){
+
+        alert(
+          "Đăng nhập Admin thành công!"
+        );
+
+        localStorage.setItem("user", username);
+        localStorage.setItem("role", role);
+
+        // CHUYỂN TRANG
+        window.location.href =
+        "ajaxStudy.html";
+
+        return;
+      }
+
+      if(username === "student"
+      && password === "123456"){
+
+        alert(
+          "Đăng nhập Sinh viên thành công!"
+        );
+
+        localStorage.setItem("user", username);
+        localStorage.setItem("role", role);
+
+        window.location.href =
+        "ajaxStudy.html";
+
+        return;
+      }
+
+      // SAI TÀI KHOẢN
+      alert("Sai tài khoản hoặc mật khẩu!");
+    }
+
+    // ==========================
+    // ENTER ĐỂ LOGIN
+    // ==========================
+    document.addEventListener(
+      "keydown",
+      function(event){
+
+      if(event.key === "Enter"){
+
+        login();
+      }
+    });
+
+    // ==========================
+    // TRANG CHỦ
+    // ==========================
+    function goHome(){
+
+      alert("Đang quay về trang chủ!");
+
+      // ĐỔI LINK NẾU CẦN
+      window.location.href =
+      "index.html";
+    }
+
+    // ==========================
+    // QUÊN MẬT KHẨU
+    // ==========================
+    function forgotPassword(){
+
+      const email =
+      prompt("Nhập email để nhận lại mật khẩu:");
+
+      if(email){
+
+        alert(
+          "Đã gửi link khôi phục tới:\n"
+          + email
+        );
+      }
+    }
+
+  </script>
+
+</body>
+</html>
