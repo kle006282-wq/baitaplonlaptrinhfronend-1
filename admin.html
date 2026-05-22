@@ -3,19 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập hệ thống</title>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Luxury Login System</title>
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- LINK CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+    <a href="index.html"></a>
+    <a href="index2.html"></a>
 </head>
 
 <body>
+        <a href="index.html"></a>
+        <a href="index2.html"></a>
 
+    <!-- BACKGROUND -->
+    <div class="bg-animation">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+    <!-- LOGIN -->
     <div class="login-container">
 
         <!-- LOGO -->
@@ -23,7 +40,12 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Orange_sun_icon.svg/512px-Orange_sun_icon.svg.png">
         </div>
 
-        <h1>Đăng nhập tài khoản</h1>
+        <!-- TITLE -->
+        <h1>Đăng nhập hệ thống</h1>
+
+        <p class="sub-title">
+            Luxury Admin Security Platform
+        </p>
 
         <!-- ROLE -->
         <div class="form-group">
@@ -33,9 +55,11 @@
             </div>
 
             <select id="role">
+
                 <option>Sinh Viên</option>
                 <option>Giảng Viên</option>
                 <option>Quản Trị</option>
+
             </select>
 
         </div>
@@ -78,29 +102,25 @@
         class="forgot"
         onclick="forgotPassword()">
 
-            [ Quên mật khẩu ]
+            Quên mật khẩu?
 
         </a>
 
         <!-- BUTTON -->
         <div class="btn-group">
 
-            <!-- NÚT ĐĂNG NHẬP -->
             <button class="btn btn-login"
             onclick="login()">
 
                 <i class="fa-solid fa-right-to-bracket"></i>
-
                 Đăng nhập
 
             </button>
 
-            <!-- NÚT TRANG CHỦ -->
             <button class="btn btn-home"
             onclick="goHome()">
 
                 <i class="fa-solid fa-house"></i>
-
                 Trang chủ
 
             </button>
@@ -109,7 +129,6 @@
 
     </div>
 
-    <!-- LINK FILE JAVASCRIPT -->
     <script src="js/admin.js"></script>
 
 </body>

@@ -8,7 +8,9 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <link rel="stylesheet" href="css/style2.css">
+<a href="index2.html">Trang quản trị</a>
 </head>
+
 
 <body>
 
@@ -120,6 +122,55 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 Thêm môn học
             </button>
 
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên môn</th>
+                        <th>Giảng viên</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>CS101</td>
+                        <td>Lập trình Web</td>
+                        <td>Nguyễn Văn A</td>
+
+                        <td>
+                            <button class="btn edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button class="btn delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CS202</td>
+                        <td>Cơ sở dữ liệu</td>
+                        <td>Trần Thị B</td>
+
+                        <td>
+                            <button class="btn edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button class="btn delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
         </div>
 
     </div>
@@ -131,6 +182,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <div class="content-box">
 
             <h2>Danh sách sinh viên</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>MSSV</th>
+                        <th>Họ tên</th>
+                        <th>Lớp</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1971020309</td>
+                        <td>Nguyễn Văn Nam</td>
+                        <td>DHKTPM17A</td>
+                    </tr>
+
+                    <tr>
+                        <td>1971020310</td>
+                        <td>Trần Quốc Bảo</td>
+                        <td>DHKTPM17B</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
 
         </div>
 
@@ -144,6 +223,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
             <h2>Thông báo hệ thống</h2>
 
+            <div class="notice">
+                📌 Deadline nộp bài môn Web vào ngày 20/05
+            </div>
+
+            <div class="notice">
+                📌 Bảo trì hệ thống lúc 23:00 tối nay
+            </div>
+
         </div>
 
     </div>
@@ -156,6 +243,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
             <h2>Cài đặt hệ thống</h2>
 
+            <div class="setting-item">
+                <label>Tên quản trị viên</label>
+                <input type="text" value="Administrator">
+            </div>
+
+            <div class="setting-item">
+                <label>Email</label>
+                <input type="email" value="admin@gmail.com">
+            </div>
+
+            <button class="btn add">
+                Lưu thay đổi
+            </button>
+
         </div>
 
     </div>
@@ -163,7 +264,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </div>
 
 <!-- LINK FILE JS -->
-<script src="js/admin.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+
 
 </body>
 </html>

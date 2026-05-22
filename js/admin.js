@@ -1,6 +1,6 @@
-// ==========================
+// ===================================
 // HIỆN / ẨN PASSWORD
-// ==========================
+// ===================================
 function togglePassword(){
 
     const password =
@@ -22,12 +22,14 @@ function togglePassword(){
 
         eye.classList.remove("fa-eye-slash");
         eye.classList.add("fa-eye");
+
     }
+
 }
 
-// ==========================
-// ĐĂNG NHẬP
-// ==========================
+// ===================================
+// LOGIN
+// ===================================
 function login(){
 
     const username =
@@ -45,7 +47,11 @@ function login(){
     // KIỂM TRA RỖNG
     if(username === "" || password === ""){
 
-        alert("Vui lòng nhập đầy đủ thông tin!");
+        showNotify(
+            "⚠️ Vui lòng nhập đầy đủ thông tin!",
+            "error"
+        );
+
         return;
     }
 
@@ -53,13 +59,22 @@ function login(){
     if(username === "admin"
     && password === "123456"){
 
-        alert("Đăng nhập Admin thành công!");
+        localStorage.setItem("isLogin","true");
+        localStorage.setItem("user",username);
+        localStorage.setItem("role",role);
 
-        localStorage.setItem("user", username);
-        localStorage.setItem("role", role);
+        showNotify(
+            "👑 Đăng nhập Admin thành công!",
+            "success"
+        );
 
-        window.location.href =
-        "ajaxStudy.html";
+        setTimeout(()=>{
+
+            window.location.href =
+            "index2.html";
+
+        },1500);
+
 
         return;
     }
@@ -68,58 +83,199 @@ function login(){
     if(username === "student"
     && password === "123456"){
 
-        alert("Đăng nhập Sinh viên thành công!");
+        localStorage.setItem("isLogin","true");
+        localStorage.setItem("user",username);
+        localStorage.setItem("role",role);
 
-        localStorage.setItem("user", username);
-        localStorage.setItem("role", role);
+        showNotify(
+            "🎓 Đăng nhập Sinh viên thành công!",
+            "success"
+        );
 
-        window.location.href =
-        "ajaxStudy.html";
+        setTimeout(()=>{
+
+            window.location.href =
+            "index.html";
+
+        },1500);
+
+        return;
+    }
+
+      // LECTURER
+    if(username === "lecturer"
+    && password === "123456"){
+
+
+        localStorage.setItem("isLogin","true");
+        localStorage.setItem("user",username);
+        localStorage.setItem("role",role);
+
+        showNotify(
+            "🎓 Đăng nhập Giảng viên thành công!",
+            "success"
+        );
+
+        setTimeout(()=>{
+
+            window.location.href =
+            "admin.html";
+
+        },1500);
 
         return;
     }
 
     // SAI
-    alert("Sai tài khoản hoặc mật khẩu!");
+    showNotify(
+        "❌ Sai tài khoản hoặc mật khẩu!",
+        "error"
+    );
+
 }
 
-// ==========================
-// ENTER ĐỂ LOGIN
-// ==========================
+// ===================================
+// ENTER LOGIN
+// ===================================
 document.addEventListener(
-    "keydown",
-    function(event){
+"keydown",
+function(event){
 
     if(event.key === "Enter"){
 
         login();
+
     }
+
 });
 
-// ==========================
-// TRANG CHỦ
-// ==========================
+// ===================================
+// HOME
+// ===================================
 function goHome(){
 
-    alert("Đang quay về trang chủ!");
+    showNotify(
+        "🏠 Đang quay về trang chủ...",
+        "success"
+    );
 
-    window.location.href =
-    "index.html";
+    setTimeout(()=>{
+
+        window.location.href =
+        "index.html";
+
+    },1200);
+
 }
 
-// ==========================
-// QUÊN MẬT KHẨU
-// ==========================
+// ===================================
+// FORGOT PASSWORD
+// ===================================
 function forgotPassword(){
 
     const email =
-    prompt("Nhập email để nhận lại mật khẩu:");
+    prompt("Nhập email để khôi phục mật khẩu:");
 
     if(email){
 
-        alert(
-        "Đã gửi link khôi phục tới:\n"
-        + email
+        showNotify(
+            "📧 Đã gửi liên kết tới: " + email,
+            "success"
         );
+
     }
+
 }
+
+// ===================================
+// NOTIFICATION
+// ===================================
+function showNotify(message,type){
+
+    const notify =
+    document.createElement("div");
+
+    notify.className =
+    "notify " + type;
+
+    notify.innerHTML = message;
+
+    document.body.appendChild(notify);
+
+    setTimeout(()=>{
+
+        notify.classList.add("show");
+
+    },100);
+
+    setTimeout(()=>{
+
+        notify.classList.remove("show");
+
+        setTimeout(()=>{
+
+            notify.remove();
+
+        },500);
+
+    },2500);
+
+}
+
+// ===================================
+// CSS NOTIFY
+// ===================================
+const style =
+document.createElement("style");
+
+style.innerHTML = `
+
+.notify{
+    position:fixed;
+
+    top:30px;
+    right:-400px;
+
+    min-width:280px;
+
+    padding:18px 25px;
+
+    border-radius:18px;
+
+    color:white;
+
+    font-weight:600;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.4);
+
+    transition:0.5s;
+
+    z-index:9999;
+}
+
+.notify.show{
+    right:30px;
+}
+
+.notify.success{
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+}
+
+.notify.error{
+    background:linear-gradient(
+        135deg,
+        #dc2626,
+        #ef4444
+    );
+}
+
+`;
+
+document.head.appendChild(style);

@@ -11,6 +11,7 @@
 
     <!-- LINK CSS -->
     <link rel="stylesheet" href="css/style3.css">
+    
 </head>
 
 <body>
@@ -24,8 +25,8 @@
         ADMIN
     </h2>
 
-    <div class="nav-link active"
-    onclick="showSection('schedule-sec', this)">
+    <div class="nav-link active" data-target="schedule-sec">
+
 
         <i class="fa-solid fa-calendar"></i>
         Lịch Học
@@ -33,12 +34,13 @@
     </div>
 
     <div class="nav-link"
-    onclick="showSection('user-sec', this)">
+    data-target="user-sec">
 
         <i class="fa-solid fa-users"></i>
         Người Dùng
 
     </div>
+
 
 </div>
 
