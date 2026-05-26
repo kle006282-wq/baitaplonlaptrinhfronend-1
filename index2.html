@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
     <title>Hệ Thống Quản Lý Toàn Diện</title>
+
+    <!-- BOOTSTRAP 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet"
@@ -11,111 +20,244 @@
 
     <!-- LINK CSS -->
     <link rel="stylesheet" href="css/style3.css">
-    
+
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
+<!-- CONTAINER -->
+<div class="container-fluid p-0">
 
-<div class="sidebar">
+    <div class="row g-0 min-vh-100">
 
-    <h2>
-        <i class="fa-solid fa-shield-halved"></i>
-        ADMIN
-    </h2>
+        <!-- SIDEBAR -->
+        <div class="col-12 col-md-3 col-lg-2">
 
-    <div class="nav-link active" data-target="schedule-sec">
+            <div class="sidebar h-100 shadow-lg p-3">
 
+                <h2 class="text-center text-white fw-bold mb-5">
 
-        <i class="fa-solid fa-calendar"></i>
-        Lịch Học
+                    <i class="fa-solid fa-shield-halved"></i>
+                    ADMIN
 
-    </div>
+                </h2>
 
-    <div class="nav-link"
-    data-target="user-sec">
+                <div class="nav-link active
+                d-flex
+                align-items-center
+                gap-3
+                rounded-4
+                p-3
+                mb-3"
+                data-target="schedule-sec">
 
-        <i class="fa-solid fa-users"></i>
-        Người Dùng
+                    <i class="fa-solid fa-calendar"></i>
 
-    </div>
+                    Lịch Học
 
+                </div>
 
-</div>
+                <div class="nav-link
+                d-flex
+                align-items-center
+                gap-3
+                rounded-4
+                p-3"
+                data-target="user-sec">
 
-<!-- MAIN -->
+                    <i class="fa-solid fa-users"></i>
 
-<div class="main">
+                    Người Dùng
 
-    <!-- SCHEDULE -->
+                </div>
 
-    <div id="schedule-sec"
-    class="section active">
-
-        <h1>Quản Lý Lịch Học</h1>
-
-        <div class="glass-card">
-
-            <input type="text"
-            id="sch-user"
-            placeholder="Tên User...">
-
-            <input type="text"
-            id="sch-subject"
-            placeholder="Môn học...">
-
-            <input type="text"
-            id="sch-time"
-            placeholder="Thời gian...">
-
-            <button class="btn btn-add"
-            onclick="addSchedule()">
-
-                Thêm Lịch
-
-            </button>
+            </div>
 
         </div>
 
-        <div id="scheduleGrid"
-        class="grid"></div>
+        <!-- MAIN -->
+        <div class="col-12 col-md-9 col-lg-10">
 
-    </div>
+            <div class="main p-3 p-md-4">
 
-    <!-- USERS -->
+                <!-- SCHEDULE -->
+                <div id="schedule-sec"
+                class="section active">
 
-    <div id="user-sec"
-    class="section">
+                    <div class="d-flex
+                    justify-content-between
+                    align-items-center
+                    flex-wrap
+                    gap-3
+                    mb-4">
 
-        <h1>Quản Lý Người Dùng</h1>
+                        <h1 class="fw-bold text-white">
 
-        <div class="glass-card">
+                            Quản Lý Lịch Học
 
-            <input type="text"
-            id="u-name"
-            placeholder="Họ và tên...">
+                        </h1>
 
-            <input type="text"
-            id="u-role"
-            placeholder="Chức vụ...">
+                        <!-- BADGE -->
+                        <span class="badge bg-primary fs-6 px-3 py-2">
 
-            <button class="btn btn-add"
-            style="background:var(--secondary)"
-            onclick="addUser()">
+                            Bootstrap 5
 
-                Thêm Thành Viên
+                        </span>
 
-            </button>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="glass-card
+                    card
+                    border-0
+                    shadow-lg
+                    rounded-4
+                    p-4
+                    mb-4">
+
+                        <div class="row g-3">
+
+                            <div class="col-12 col-md-4">
+
+                                <input
+                                type="text"
+                                id="sch-user"
+                                class="form-control shadow-sm"
+                                placeholder="Tên User...">
+
+                            </div>
+
+                            <div class="col-12 col-md-4">
+
+                                <input
+                                type="text"
+                                id="sch-subject"
+                                class="form-control shadow-sm"
+                                placeholder="Môn học...">
+
+                            </div>
+
+                            <div class="col-12 col-md-4">
+
+                                <input
+                                type="text"
+                                id="sch-time"
+                                class="form-control shadow-sm"
+                                placeholder="Thời gian...">
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <button
+                                class="btn btn-success btn-lg rounded-pill px-4 shadow"
+                                onclick="addSchedule()">
+
+                                    <i class="fa-solid fa-plus"></i>
+                                    Thêm Lịch
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- GRID -->
+                    <div id="scheduleGrid"
+                    class="grid row g-4"></div>
+
+                </div>
+
+                <!-- USERS -->
+                <div id="user-sec"
+                class="section">
+
+                    <div class="d-flex
+                    justify-content-between
+                    align-items-center
+                    flex-wrap
+                    gap-3
+                    mb-4">
+
+                        <h1 class="fw-bold text-white">
+
+                            Quản Lý Người Dùng
+
+                        </h1>
+
+                        <span class="badge bg-info fs-6 px-3 py-2">
+
+                            User Manager
+
+                        </span>
+
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="glass-card
+                    card
+                    border-0
+                    shadow-lg
+                    rounded-4
+                    p-4
+                    mb-4">
+
+                        <div class="row g-3">
+
+                            <div class="col-12 col-md-5">
+
+                                <input
+                                type="text"
+                                id="u-name"
+                                class="form-control shadow-sm"
+                                placeholder="Họ và tên...">
+
+                            </div>
+
+                            <div class="col-12 col-md-5">
+
+                                <input
+                                type="text"
+                                id="u-role"
+                                class="form-control shadow-sm"
+                                placeholder="Chức vụ...">
+
+                            </div>
+
+                            <div class="col-12 col-md-2">
+
+                                <button
+                                class="btn btn-info btn-lg w-100 rounded-pill shadow"
+                                onclick="addUser()">
+
+                                    Thêm
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- GRID -->
+                    <div id="userGrid"
+                    class="grid row g-4"></div>
+
+                </div>
+
+            </div>
 
         </div>
-
-        <div id="userGrid"
-        class="grid"></div>
 
     </div>
 
 </div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- LINK JS -->
 <script src="js/main.js"></script>
